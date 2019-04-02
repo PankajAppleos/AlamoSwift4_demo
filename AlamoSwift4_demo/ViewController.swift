@@ -66,7 +66,12 @@ class ViewController: UIViewController {
                 print(response)
                 
             case .failure(let error):break
-                
+            let alert = UIAlertController(title: "Error msg", message: "Error while fetching data\(error)\(\n)", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
                 //failure(0,"Error")
             }
         }
